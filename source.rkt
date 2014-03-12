@@ -1,16 +1,15 @@
 (require 2htdp/image 2htdp/universe)
 
 ;; Physics
-(define G 0.24)
-(define TICK-RATE 0.1)
-(define SPEED-BOOST 0.7)
-(define BARIER-PROB 0.3)
-(define BARIER-DIST 8)
-(define OPENING 8)
+(define G 0.37)
+(define TICK-RATE 0.08)
+(define SPEED-BOOST 1.25)
+(define BARRIER-PROB 0.2)
+(define BARRIER-DIST 8)
+(define OPENING 6)
 
 ;; World
 (define SIZE 30)
-(define BIRD-SIZE 30)
 (define SEG-SIZE 15)
 (define WIDTH-PX  (* SEG-SIZE SIZE))
 (define HEIGHT-PX (* SEG-SIZE SIZE))
@@ -65,9 +64,9 @@
   (not (and (= (car o) 0) (= (cadr o) SIZE))))
 
 (define (create-barrier scene)
-  (if (and (flip-prob BARIER-PROB)
+  (if (and (flip-prob BARRIER-PROB)
            (andmap (lambda (p) (not (special-opening? (car p))))
-                   (drop scene (- SIZE BARIER-DIST))))
+                   (drop scene (- SIZE BARRIER-DIST))))
       (cons (make-opening (add1 (random (- SIZE OPENING))) OPENING) (add1 SIZE))
       (cons (make-opening 0 SIZE) (add1 SIZE))))
 
