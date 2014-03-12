@@ -1,12 +1,12 @@
 (require 2htdp/image 2htdp/universe)
 
 ;; Physics
-(define G 0.23)
+(define G 0.24)
 (define TICK-RATE 0.1)
 (define SPEED-BOOST 0.7)
 (define BARIER-PROB 0.3)
 (define BARIER-DIST 8)
-(define OPENING 6)
+(define OPENING 8)
 
 ;; World
 (define SIZE 30)
