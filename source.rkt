@@ -11,7 +11,7 @@
 ;; World
 (define SIZE 30)
 (define BIRD-SIZE 30)
-(define SEG-SIZE 30)
+(define SEG-SIZE 15)
 (define WIDTH-PX  (* SEG-SIZE SIZE))
 (define HEIGHT-PX (* SEG-SIZE SIZE))
 (define MT-SCENE (overlay
